@@ -159,3 +159,62 @@ footer {
   background: #4ade80;
   color: black;
 }
+/* 📱 RESPONSIVE CELULAR */
+@media (max-width: 768px) {
+
+  /* HEADER */
+  header h1 {
+    font-size: 28px;
+    letter-spacing: 2px;
+  }
+
+  header p {
+    font-size: 14px;
+  }
+
+  /* NAV */
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+  nav {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  nav a {
+    font-size: 14px;
+  }
+
+  /* CARDS */
+  .card {
+    width: 95%;
+    padding: 15px;
+  }
+
+  /* TITULOS */
+  h2 {
+    font-size: 20px;
+  }
+
+  /* TEXTO */
+  p, li {
+    font-size: 14px;
+  }
+
+  /* IMAGEN ESQUEMA */
+  .esquema {
+    max-width: 100%;
+  }
+
+  /* CARRUSEL */
+  .slides img {
+    height: 220px; /* más chico en celular */
+  }
+
+  .btn {
+    padding: 8px 10px;
+    font-size: 16px;
+  }
+
+}
