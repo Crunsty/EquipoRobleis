@@ -20,6 +20,7 @@ header h1 {
   letter-spacing: 4px;
   text-transform: uppercase;
 }
+
 /* NAV */
 nav {
   display: flex;
@@ -71,28 +72,9 @@ p {
   opacity: 0.9;
 }
 
-.intro {
-  text-align: center;
-  max-width: 700px;
-  margin: auto;
-}
-
 /* LISTAS */
 ul {
   line-height: 1.6;
-}
-
-/* BARRA PROGRESO */
-.barra {
-  background: #1e293b;
-  border-radius: 10px;
-}
-
-.progreso {
-  width: 60%;
-  height: 10px;
-  background: #4ade80;
-  border-radius: 10px;
 }
 
 /* FOOTER */
@@ -102,6 +84,7 @@ footer {
   background: #020617;
   border-top: 1px solid #4ade80;
 }
+
 /* ESQUEMA */
 .esquema {
   width: 100%;
@@ -111,11 +94,12 @@ footer {
   border-radius: 10px;
   border: 2px solid #4ade80;
 }
-/* CARRUSEL PRO */
+
+/* CARRUSEL */
 .carrusel {
   position: relative;
   width: 95%;
-  max-width: 1100px; /* antes 800px */
+  max-width: 1100px;
   margin: auto;
 }
 
@@ -133,10 +117,11 @@ footer {
 .slides img {
   width: 100%;
   flex: 0 0 100%;
-  height: 450px; /* antes 300px */
-  object-fit: contain; /* 🔥 clave */
-  background: black; /* relleno si sobra espacio */
+  height: 450px;
+  object-fit: contain;
+  background: black;
 }
+
 /* BOTONES */
 .btn {
   position: absolute;
@@ -159,10 +144,45 @@ footer {
   background: #4ade80;
   color: black;
 }
-/* 📱 RESPONSIVE CELULAR */
+
+/* BOTON HAMBURGUESA */
+.menu-toggle {
+  display: none;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  font-size: 28px;
+  background: #020617;
+  color: #4ade80;
+  border: none;
+  padding: 10px 12px;
+  border-radius: 8px;
+  z-index: 1001;
+  cursor: pointer;
+}
+
+/* OVERLAY */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s;
+  z-index: 998;
+}
+
+.overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* 📱 RESPONSIVE */
 @media (max-width: 768px) {
 
-  /* HEADER */
   header h1 {
     font-size: 28px;
     letter-spacing: 2px;
@@ -172,18 +192,33 @@ footer {
     font-size: 14px;
   }
 
-  /* NAV */
-  nav {
-    flex-direction: column;
-    align-items: center;
+  /* MENU LATERAL */
+  .menu-toggle {
+    display: block;
   }
+
   nav {
-    flex-wrap: wrap;
-    gap: 10px;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 240px;
+    height: 100%;
+    background: #020617;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 70px 20px;
+    gap: 15px;
+    transition: 0.3s ease;
+    z-index: 999;
+  }
+
+  nav.active {
+    left: 0;
   }
 
   nav a {
-    font-size: 14px;
+    font-size: 16px;
+    width: 100%;
   }
 
   /* CARDS */
@@ -192,29 +227,20 @@ footer {
     padding: 15px;
   }
 
-  /* TITULOS */
   h2 {
     font-size: 20px;
   }
 
-  /* TEXTO */
   p, li {
     font-size: 14px;
   }
 
-  /* IMAGEN ESQUEMA */
-  .esquema {
-    max-width: 100%;
-  }
-
-  /* CARRUSEL */
   .slides img {
-    height: 220px; /* más chico en celular */
+    height: 220px;
   }
 
   .btn {
     padding: 8px 10px;
     font-size: 16px;
   }
-
 }

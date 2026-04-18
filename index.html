@@ -9,23 +9,7 @@
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
 </head>
-<script>
-window.onload = function () {
-  let index = 0;
-  const slides = document.getElementById("slides");
-  const total = slides.children.length;
 
-  document.querySelector(".next").onclick = () => {
-    index = (index + 1) % total;
-    slides.style.transform = `translateX(-${index * 100}%)`;
-  };
-
-  document.querySelector(".prev").onclick = () => {
-    index = (index - 1 + total) % total;
-    slides.style.transform = `translateX(-${index * 100}%)`;
-  };
-};
-</script>
 <body>
 
 <header>
@@ -33,7 +17,10 @@ window.onload = function () {
   <p>Proyecto de Emprendimiento Tecnológico</p>
 </header>
 
-<nav>
+<button class="menu-toggle">☰</button>
+<div class="overlay"></div>
+
+<nav id="menu">
   <a href="#quienes">Nosotros</a>
   <a href="#servicios">Servicios</a>
   <a href="#proyecto">Proyecto</a>
@@ -150,6 +137,51 @@ window.onload = function () {
 <footer>
   <p>© 2026 Equipo Robleis</p>
 </footer>
+
+<!-- JS FINAL -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  // MENU
+  const btn = document.querySelector(".menu-toggle");
+  const menu = document.getElementById("menu");
+  const overlay = document.querySelector(".overlay");
+  const links = document.querySelectorAll("#menu a");
+
+  btn.onclick = () => {
+    menu.classList.toggle("active");
+    overlay.classList.toggle("active");
+  };
+
+  overlay.onclick = () => {
+    menu.classList.remove("active");
+    overlay.classList.remove("active");
+  };
+
+  links.forEach(link => {
+    link.onclick = () => {
+      menu.classList.remove("active");
+      overlay.classList.remove("active");
+    };
+  });
+
+  // CARRUSEL
+  let index = 0;
+  const slides = document.getElementById("slides");
+  const total = slides.children.length;
+
+  document.querySelector(".next").onclick = () => {
+    index = (index + 1) % total;
+    slides.style.transform = `translateX(-${index * 100}%)`;
+  };
+
+  document.querySelector(".prev").onclick = () => {
+    index = (index - 1 + total) % total;
+    slides.style.transform = `translateX(-${index * 100}%)`;
+  };
+
+});
+</script>
 
 </body>
 </html>
