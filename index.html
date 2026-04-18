@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Equipo Robleis</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
+</head>
+<script>
+window.onload = function () {
+  let index = 0;
+  const slides = document.getElementById("slides");
+  const total = slides.children.length;
+
+  document.querySelector(".next").onclick = () => {
+    index = (index + 1) % total;
+    slides.style.transform = `translateX(-${index * 100}%)`;
+  };
+
+  document.querySelector(".prev").onclick = () => {
+    index = (index - 1 + total) % total;
+    slides.style.transform = `translateX(-${index * 100}%)`;
+  };
+};
+</script>
+<body>
+
+<header>
+  <h1>Equipo Robleis</h1>
+  <p>Proyecto de Emprendimiento Tecnológico</p>
+</header>
+
+<nav>
+  <a href="#quienes">Nosotros</a>
+  <a href="#servicios">Servicios</a>
+  <a href="#proyecto">Proyecto</a>
+  <a href="#trabajo">Trabajo</a>
+  <a href="#resultados">Resultados</a>
+  <a href="#galeria">Galería</a>
+  <a href="#contacto">Contacto</a>
+</nav>
+
+<!-- QUIENES -->
+<section id="quienes" class="card">
+  <h2>¿Quiénes somos?</h2>
+  <p><strong>Nombre del grupo:</strong> Equipo Robleis</p>
+  <p><strong>Integrantes:</strong></p>
+  <ul>
+    <li>Reynoso Dulce</li>
+    <li>Cuellar Braian</li>
+    <li>Nievas Franco</li>
+    <li>Mañalardo Clarence</li>
+  </ul>
+  <p><strong>Escuela:</strong> E.E.S.T.N N°3 "Víctor Mercante"</p>
+
+  <p>
+  Nuestra idea surgió debido a la falta de servidores en el colegio, lo que nos llevó a reparar el servidor existente e instalar dos nuevos.
+  </p>
+</section>
+
+<!-- SERVICIOS -->
+<section id="servicios" class="card">
+  <h2>Servicios</h2>
+  <ul>
+    <li>🔧 Reparación de servidores</li>
+    <li>💻 Instalación de servidores</li>
+    <li>🌐 Configuración de redes</li>
+    <li>🛠 Mantenimiento técnico</li>
+  </ul>
+</section>
+
+<!-- DESCRIPCION -->
+<section id="proyecto" class="card">
+  <h2>Descripción del Proyecto</h2>
+  <p>
+  Ofrecemos servicios de instalación y reparación de servidores en colegios.
+  </p>
+
+  <p><strong>Misión:</strong> Instalación y reparación de servidores para evitar problemas de red.</p>
+  <p><strong>Tipo:</strong> Servicio tecnológico sin fines de lucro.</p>
+  <p><strong>Público:</strong> Estudiantes</p>
+</section>
+
+<!-- TRABAJO REAL -->
+<section id="trabajo" class="card">
+  <h2>Trabajo realizado</h2>
+
+  <p>
+  Se revisó el rack de red donde se encuentra el switch conectado al router y al patch panel que distribuye la red.
+  </p>
+
+  <p>
+  Se detectó desorden en el cableado, dificultando la identificación de cada computadora.
+  </p>
+
+  <p>
+  Se reorganizaron las conexiones asignando cada PC a un puerto específico (ej: PC 1 → Puerto 1).
+  </p>
+
+  <p>
+  Actualmente se completó la organización y falta el ordenado final del cableado.
+  </p>
+</section>
+
+<!-- ESQUEMA -->
+<section class="card">
+  <h2>Esquema de red</h2>
+  <img src="img/esquema.png" class="esquema">
+</section>
+
+<!-- RESULTADOS -->
+<section id="resultados" class="card">
+  <h2>Resultados actuales</h2>
+  <p>✔ Organización completa del cableado</p>
+  <p>✔ Identificación clara de cada computadora</p>
+  <p>✔ Mejora en el mantenimiento de la red</p>
+</section>
+
+<!-- CARRUSEL -->
+<section id="galeria" class="card">
+  <h2>Trabajo en proceso</h2>
+
+  <div class="carrusel">
+    
+    <button class="btn prev">&#10094;</button>
+
+    <div class="viewport">
+      <div class="slides" id="slides">
+        <img src="img/imagen1.webp">
+        <img src="img/imagen2.avif">
+        <img src="img/imagen3.jpg">
+        <img src="img/imagen4.jpg">
+      </div>
+    </div>
+
+    <button class="btn next">&#10095;</button>
+
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto" class="card">
+  <h2>Contacto</h2>
+  <p>Email: equiporobleis@gmail.com</p>
+</section>
+
+<footer>
+  <p>© 2026 Equipo Robleis</p>
+</footer>
+
+</body>
+</html>
